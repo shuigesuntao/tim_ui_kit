@@ -201,7 +201,7 @@ class Permissions {
   }
 
   static Future<bool> checkPermission(BuildContext context, int value) async {
-    final status = await Permission.byValue(value).status;
+    final status = await Permission.byValue(value).request();
     if (status.isGranted) {
       return true;
     }
